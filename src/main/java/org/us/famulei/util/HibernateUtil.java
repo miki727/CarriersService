@@ -21,7 +21,7 @@ public class HibernateUtil {
         logger.info("Start get session factory");
         if(sessionFactory == null) {
             try {
-                String[] modelPackages = {"org.ascending.training.model"};
+                String[] modelPackages = {"org.us.famulei.model"};
                 String dbDriver = System.getProperty("database.driver");
                 String dbDialect = System.getProperty("database.dialect");
                 String dbUrl = System.getProperty("database.url");
@@ -51,14 +51,14 @@ public class HibernateUtil {
         }
         return sessionFactory;
     }
-
-    public static void main(String[] args) {
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-
-        logger.info("Success generate sf, {}", sf.hashCode());
-        Session s = sf.openSession();
-        logger.info("Got a session to connect to db");
-        s.close();
-    }
+//
+//    public static void main(String[] args) {
+//        SessionFactory sf = HibernateUtil.getSessionFactory();
+//
+//        logger.info("Success generate sf, {}", sf.hashCode());
+//        Session s = sf.openSession();
+//        logger.info("Got a session to connect to db");
+//        s.close();
+//    }
 
 }

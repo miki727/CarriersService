@@ -1,6 +1,7 @@
 package org.us.famulei.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "carriers")
@@ -18,12 +19,23 @@ public class Carrier {
         @Column(name = "location")
         private String location;
 
+        @OneToMany(mappedBy = "carrier", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+        private Set<Client> clients;
+
         public void setId(long id) {
                 this.id = id;
         }
 
+        public long getId() {
+                return id;
+        }
+
         public void setName(String name) {
                 this.name = name;
+        }
+
+        public String getName() {
+                return name;
         }
 
         public void setDescription(String description) {
@@ -33,4 +45,6 @@ public class Carrier {
         public void setLocation(String location) {
                 this.location = location;
         }
+
+        public Set<Client> getClients() {return clients;}
 }

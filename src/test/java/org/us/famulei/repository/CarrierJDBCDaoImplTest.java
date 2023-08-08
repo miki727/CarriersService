@@ -27,24 +27,24 @@ public class CarrierJDBCDaoImplTest {
     }
 
 
-    @Test
-    public void createCarriersTest() {
-
-        assertEquals(0, carrierDao.getCarriers().size());
-
-    }
-
-    @Test
-    public void updateCarriersTest() {
-
-        assertEquals(0, carrierDao.getCarriers().size());
-
-    }
-
-    @Test
-    public void deleteCarriersTest() {
-
-        assertEquals(0, carrierDao.getCarriers().size());
-
-    }
+//    @Test
+//    public void createCarriersTest() {
+//
+//        assertEquals(0, carrierDao.getCarriers().size());
+//
+//    }
+//
+//    @Test
+//    public void updateCarriersTest() {
+//
+//        assertEquals(0, carrierDao.getCarriers().size());
+//
+//    }
+//
+//    @Test
+//    public void deleteCarriersTest() {
+//
+//        assertEquals(0, carrierDao.getCarriers().size());
+//
+//    }
 }

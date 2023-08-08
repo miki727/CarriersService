@@ -13,11 +13,16 @@ public class CarrierJDBCDaoImpl implements ICarrierDao {
     static final String USER = "admin";
     static final String PASS = "Carriers123!";
 
+    @Override
+    public void save(Carrier carrier) {
+
+    }
+
     @Override //wk2.1 pt2 01:29:30
     public List<Carrier> getCarriers() {
         Logger logger = LoggerFactory.getLogger(CarrierJDBCDaoImpl.class);
 
-        logger.debug("Start to getCarriers from Postgres via JDBC.");
+        logger.info("Start to getCarriers from Postgres via JDBC.");
 
         //Step1: Prepare the required data model
         List<Carrier> carriers = new ArrayList<Carrier>();
@@ -30,9 +35,9 @@ public class CarrierJDBCDaoImpl implements ICarrierDao {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             //Step3: Execute a query
-            stmt = conn.createStatement();
             String sql;
             sql = "SELECT * FROM carriers";
+            stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
             logger.info("Connects to DB successfully and execute the query.");
 
@@ -68,6 +73,21 @@ public class CarrierJDBCDaoImpl implements ICarrierDao {
 
         logger.info("Finish getDepartments, %s", carriers);
         return carriers;
+    }
+
+    @Override
+    public Carrier getById(Long id) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(Carrier carrier) {
+        return false;
+    }
+
+    @Override
+    public Carrier getCarrierEagerBy(Long id) {
+        return null;
     }
 
 }
